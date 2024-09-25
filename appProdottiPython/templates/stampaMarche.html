@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodotti per Marca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <style>
+        img {
+            width: 90px !important;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prodotti per Marca</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Marca</th>
+                <th>Prezzo</th>
+                <th>URL</th>
+                <th>Pezzi</th>
+                <th>Prodotti Venduti</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prodotto in lista %}
+            <tr>
+                <td>{{ prodotto[0] }}</td>
+                <td>{{ prodotto[1] }}</td>
+                <td>{{ prodotto[2] }}</td>
+                <td>{{ prodotto[3] }}</td>
+                <td><img src="{{ prodotto[5] }}" alt="{{prodotto[1]}}"></td>
+                <td>{{ prodotto[6] }}</td>
+                <!--<td>{{ prototto[7] }}</td>-->
+                <!--<td>{{ prodotto[6] }}</td>-->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
